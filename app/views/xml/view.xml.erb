@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<output>
+  <% if @error %>
+    <error><%= @error %></error>
+  <% else %>
+    <input><%= @input %></input>
+    <result><%= @result %></result>
+    <table>
+      <% @numbers&.each_with_index do |numbers, i| %>
+        <palindrome index="<%= i+1 %>">
+          <number><%= numbers %></number>
+          <square><%= numbers**2 %></square>
+        </palindrome> 
+      <% end %>
+    </table>
+  <% end %>
+</output>
