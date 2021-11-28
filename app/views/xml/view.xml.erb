@@ -8,6 +8,7 @@
     <table>
       <% @numbers&.each_with_index do |numbers, i| %>
         <palindrome index="<%= i+1 %>">
+          <index><%= i+1 %></index>
           <number><%= numbers %></number>
           <square><%= numbers**2 %></square>
         </palindrome> 
