@@ -13,6 +13,12 @@ class XmlController < ApplicationController
              when 'ArgumentError' then 'Некорректный ввод. Используйте только цифры!'
              else e
              end
+  ensure
+    respond_to do |format|
+      format.html { render 'view.html' }
+      format.xml { render 'view.xml' }
+      format.rss { render 'view.xml' }
+    end
   end
 
   private
@@ -23,7 +29,6 @@ class XmlController < ApplicationController
 
   def validate_input(input)
     raise 'Пустой ввод. Вы ничего не ввели!' if input.empty?
-
     Integer(input)
   end
 end
