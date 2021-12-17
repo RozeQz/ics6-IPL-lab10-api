@@ -15,8 +15,8 @@ class XmlController < ApplicationController
              end
   ensure
     respond_to do |format|
-      format.html { render 'view.html' }
-      format.xml { render 'view.xml' }
+      format.html
+      format.xml
       format.rss { render 'view.xml' }
     end
   end
@@ -29,6 +29,7 @@ class XmlController < ApplicationController
 
   def validate_input(input)
     raise 'Пустой ввод. Вы ничего не ввели!' if input.empty?
+
     Integer(input)
   end
 end
